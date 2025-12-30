@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/aws-sdk/dynamoDb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/aws-sdk/s3-presign" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/aws-sdk/sdk-pratice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/aws-sdk/sdk-s3" vcs="Git" />
   </component>
 </project>
