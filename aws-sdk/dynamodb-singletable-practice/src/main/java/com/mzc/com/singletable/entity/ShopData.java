@@ -19,12 +19,12 @@ public class ShopData {
 	private String type;    // ORDER or ITEM
 	private String info;    // 주문 성공 or 메뉴 이름
 	private Integer amount; // 주문 총액 or 가격
-
+	
 	@DynamoDbPartitionKey
 	public String getPk() {
 		return pk;
 	}
-
+	
 	@DynamoDbSortKey
 	public String getSk() {
 		return sk;

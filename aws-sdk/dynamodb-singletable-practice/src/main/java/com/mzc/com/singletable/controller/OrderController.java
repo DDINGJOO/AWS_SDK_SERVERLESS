@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/orders")
 @RequiredArgsConstructor
 public class OrderController {
-
+	
 	private final OrderService orderService;
-
+	
 	@PostMapping
 	public ResponseEntity<OrderCreateResponse> createOrder(@RequestBody OrderRequest request) {
 		OrderCreateResponse response = orderService.createOrder(request);
 		return ResponseEntity.status(HttpStatus.CREATED).body(response);
 	}
-
+	
 	@GetMapping("/{orderId}")
 	public ResponseEntity<OrderResponse> getOrder(@PathVariable String orderId) {
 		OrderResponse response = orderService.getOrder(orderId);

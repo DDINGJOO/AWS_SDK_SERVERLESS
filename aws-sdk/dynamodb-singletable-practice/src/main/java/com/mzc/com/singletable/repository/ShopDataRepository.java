@@ -17,36 +17,36 @@ import java.util.stream.Collectors;
 @Repository
 @RequiredArgsConstructor
 public class ShopDataRepository {
-
+	
 	private final DynamoDbEnhancedClient enhancedClient;
 	private DynamoDbTable<ShopData> shopDataTable;
-
+	
 	@PostConstruct
 	public void init() {
 		shopDataTable = enhancedClient.table(
 				"ShopData-ddingjoo", TableSchema.fromBean(ShopData.class)
 		);
 	}
-
+	
 	public void save(ShopData shopData) {
 		shopDataTable.putItem(shopData);
 	}
-
+	
 	public void saveAll(List<ShopData> shopDataList) {
 		for (ShopData shopData : shopDataList) {
 			shopDataTable.putItem(shopData);
 		}
 	}
-
+	
 	public List<ShopData> findByPk(String pk) {
 		QueryConditional queryConditional = QueryConditional.keyEqualTo(
 				Key.builder().partitionValue(pk).build()
 		);
-
+		
 		QueryEnhancedRequest request = QueryEnhancedRequest.builder()
 				.queryConditional(queryConditional)
 				.build();
-
+		
 		return shopDataTable.query(request)
 				.items()
 				.stream()

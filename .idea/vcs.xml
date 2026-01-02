@@ -6,5 +6,6 @@
     <mapping directory="$PROJECT_DIR$/aws-sdk/s3-presign" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/aws-sdk/sdk-pratice" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/aws-sdk/sdk-s3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/aws-sdk/ses" vcs="Git" />
   </component>
 </project>
